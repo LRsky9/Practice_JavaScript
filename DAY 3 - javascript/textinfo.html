@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        .empty{
+            border: red 2px solid;
+        }
+
+    </style>
+   
+   <script>
+
+        const inps = document.querySelectionAll("input").addEventListener(onblur ,emptyCheck)
+        function report(){
+            if (T1.value == ""){
+                alert ("number 1 is missing")
+            } else{
+                if (T2.value == ""){
+                    alert ("number 2 is missing")
+                } else{
+                    T3.value = parseInt (T1.value) + parseInt (T2.value)
+                    T1.value = "";
+                    T2.value = "";
+                }
+            }
+            
+        }
+
+        function emptyCheck(elem) {
+            if (elem.value.length < 1){
+                elem.classList.add("empty")
+                } else {
+                     elem.classList.remove("empty")
+                }
+        }
+
+        function emptyResult(){
+            document.getElementById (`T3`) .innerHTML = ""
+        }
+
+        function reject()
+
+            if 
+    </script>
+</head>
+<body>
+    First Number
+    <input type="text" id="T1" size="4" maxlength="4" onblur="emptyCheck(this)" onfocus="emptyResult()" onclick="reject()">
+    <br>
+    First Number
+    <input type="text" id="T2" size="4" maxlength="4" onblur="emptyCheck(this)" onfocus="emptyResult()" onclick="reject()">
+    <br>
+    <input type="button" value="Addition" onclick="report()">
+    <br>
+   Result:
+   <output id="T3"></output>
+
+
+
+</body>
+</html>
